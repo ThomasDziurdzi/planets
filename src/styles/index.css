@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap");
+
 :root {
-	/* variables css */
+	/* Colors */
+	--main-clr: 240 67% 8%;
+	--white-clr: #fff;
+	--medium-grey-clr: #38384F;
+	--light-grey-clr: #838391;
+	--light-blue-clr: #419EBB;
+	--dark-yellow-clr: #EDA249;
+	--purple-clr: #6F2ED6;
+	--dark-orange-clr: #D14C32;
+	--red-clr:#D83A34;
+	--orange-clr: #CD5120;
+	--light-blue-clr: #1EC2A4;
+	--medium-blue-clr: #2D68F0;
+	
+	/*Font Styling*/
+	--ff-navbar: "Antonio", sans-serif;
+	--ff-main: "League Spartan", sans-serif;
+
+}
+
+body {
+	background: hsl(var(--main-color)) url("/public/background-stars.svg");
+
 }

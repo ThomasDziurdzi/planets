@@ -22,6 +22,6 @@
 }
 
 body {
-	background: hsl(var(--main-color)) url("/public/background-stars.svg");
+	background: hsl(var(--main-clr)) url("/public/background-stars.svg");
 
 }

@@ -1,11 +1,14 @@
 import './App.css'
-import Header from './components/NavBar'
+import Navbar from './components/NavBar'
+import Main from './components/Main'
+import earth from "./assets/planet-earth.svg"
 
 function App() {
 
   return (
     <>
-     <Header/>
+     <Navbar/>
+     <Main earth={earth}/>
     </>
   )
 }

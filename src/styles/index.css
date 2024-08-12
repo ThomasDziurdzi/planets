@@ -3,14 +3,14 @@
 :root {
 	/* Colors */
 	--main-clr: 240 67% 8%;
-	--white-clr: #fff;
-	--medium-grey-clr: #38384F;
-	--light-grey-clr: #838391;
+	--white-clr: 0, 0%, 100%;
+	--medium-grey-clr: 240, 17%, 26%;
+	--light-grey-clr: 240, 6%, 54%;
 	--light-blue-clr: #419EBB;
 	--dark-yellow-clr: #EDA249;
 	--purple-clr: #6F2ED6;
 	--dark-orange-clr: #D14C32;
-	--red-clr:#D83A34;
+	--red-clr:10 63% 51%;
 	--orange-clr: #CD5120;
 	--light-blue-clr: #1EC2A4;
 	--medium-blue-clr: #2D68F0;

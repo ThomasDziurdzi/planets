@@ -1,0 +1,26 @@
+header {
+    nav {
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid hsla(var(--light-grey-clr), 0.3);
+        /* padding-bottom: 2rem; */
+        h1 {
+            color: hsl(var(--white-clr));
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: var(--ff-navbar);
+            margin-left: 2rem;
+            line-height: 103px;
+            /* margin: 2rem; */
+        }
+        img {
+            line-height: 103px;
+            height: 1.5rem;
+            margin-right: 2rem;
+            
+        }
+    }
+}

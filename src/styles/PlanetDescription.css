@@ -4,4 +4,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: var(--ff-main);
+
+    .planet-description-title {
+        font-family: var(--ff-second);
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .planet-description-text {
+        
+        line-height: 25px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .infos-link {
+        color: hsl(var(--light-grey-clr));
+
+        a {
+            text-decoration: none;
+            color: hsl(var(--light-grey-clr));
+            font-weight: bold;
+        }
+    }
 }

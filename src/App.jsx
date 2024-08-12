@@ -4,15 +4,18 @@ import Main from './components/Main'
 
 import earth from "./assets/planet-earth.svg"
 import MobileButtonList from './components/MobileButtonList'
+import PlanetInformations from './components/PlanetInformations'
+import NavbarCopy from './components/NavbarCopy'
 
 
 function App() {
 
   return (
     <>
-     <Navbar/>
+     <NavbarCopy/>
      <MobileButtonList />
      <Main earth={earth}/>
+     <PlanetInformations />
 
     </>
   )

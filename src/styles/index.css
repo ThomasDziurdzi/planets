@@ -16,12 +16,12 @@
 	--medium-blue-clr: #2D68F0;
 	
 	/*Font Styling*/
-	--ff-navbar: "Antonio", sans-serif;
 	--ff-main: "League Spartan", sans-serif;
+	--ff-second: "Antonio", sans-serif;
 
 }
 
 body {
-	background: hsl(var(--main-clr)) url("/public/background-stars.svg");
+	background: hsl(var(--main-clr)) url("/background-stars.svg");
 
 }

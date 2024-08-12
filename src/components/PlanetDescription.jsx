@@ -10,12 +10,12 @@ function PlanetDescription() {
                 exercitationem officiis similique sint, in, blanditiis harum
                 esse maxime aspernatur eveniet quia velit! Cum.
             </p>
-            <p className="infos-link">
+            <div className="infos-link">
                 Source:{" "}
                 <a href="#">
                     Wikipedia <img src={sourceIcon} alt="source icon" />
                 </a>
-            </p>
+            </div>
         </div>
     );
 }

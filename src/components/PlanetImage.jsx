@@ -1,4 +1,5 @@
 import "../styles/PlanetImage.css"
+import jupiter from "../assets/planet-jupiter.svg"
 
 function PlanetImage ({earth}) {
     return (

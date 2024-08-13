@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-     <NavbarCopy/>
+     <Navbar/>
      <MobileButtonList />
      <Main earth={earth}/>
      <PlanetInformations />

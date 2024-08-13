@@ -5,35 +5,98 @@
     border-bottom: 1px solid hsla(var(--light-grey-clr), 0.3);
     margin: 2rem 0;
     padding-bottom: 2rem;
+    position: relative;
+
     h1 {
         color: hsl(var(--white-clr));
-        font-size: 2rem;
+        font-size: 1.75rem;
         text-transform: uppercase;
         font-weight: 700;
         font-family: var(--ff-second);
         margin-left: 2rem;
-        
-       
-    }
-    img {
-        height: 1.5rem;
-        margin-right: 2rem;
     }
 
-    .header-nav {
+    .header-burger-icon {
+        /* height: 1.5rem; */
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+
+    .overlay-menu-container {
         position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  background-color: hsl(var(--clr-black));
-  color: white;
-  
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        background-color: hsl(var(--main-clr));
+        font-family: var(--ff-main);
+        font-weight: bold;
+        letter-spacing: 2.6px;
+        text-transform: uppercase;
+
+        .overlay-header-container {
+            margin: 2rem 0;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .overlay-title {
+                color: hsl(var(--white-clr));
+                font-size: 1.75rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-family: var(--ff-second);
+                margin-left: 2rem;
+            }
+            .overlay-burger-icon {
+                margin-right: 2rem;
+                cursor: pointer;
+            }
+        }
+
+        .overlay-nav {
+            color: white;
+
+            .overlay-menu {
+                text-decoration: none;
+
+                & > * {
+                    padding: 1.5rem;
+                    border-bottom: 1px solid hsla(var(--light-grey-clr), 0.3);
+                }
+
+                & > *:last-child {
+                    border-bottom: none;
+                }
+
+                .overlay-list-planet {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    .overlay-color-list {
+                        background-color: hsl(var(--white-clr));
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                        flex-shrink: 0;
+                        margin-right: 1rem;
+                    }
+
+                    .overlay-list-planet-name {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
-@media (min-width:600px) {
+/* @media (min-width:600px) {
     .mobile {
       display: none;
     }
-}
+} */

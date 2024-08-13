@@ -7,7 +7,7 @@
     padding-bottom: 2rem;
     position: relative;
 
-    h1 {
+    .header-title {
         color: hsl(var(--white-clr));
         font-size: 1.75rem;
         text-transform: uppercase;
@@ -20,7 +20,11 @@
         /* height: 1.5rem; */
         margin-right: 2rem;
         cursor: pointer;
+        
+        
     }
+
+    
 
     .overlay-menu-container {
         position: fixed;
@@ -31,12 +35,12 @@
         background-color: hsl(var(--main-clr));
         font-family: var(--ff-main);
         font-weight: bold;
-        letter-spacing: 2.6px;
+       
         text-transform: uppercase;
 
         .overlay-header-container {
             margin: 2rem 0;
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -51,7 +55,10 @@
             .overlay-burger-icon {
                 margin-right: 2rem;
                 cursor: pointer;
+                
+               
             }
+            
         }
 
         .overlay-nav {
@@ -73,6 +80,7 @@
                     display: flex;
                     align-items: center;
                     gap: 1rem;
+                    letter-spacing: 2.6px;
 
                     .overlay-color-list {
                         background-color: hsl(var(--white-clr));

@@ -1,18 +1,18 @@
 import './App.css'
 import Navbar from './components/NavBar'
 import Main from './components/Main'
-
-import earth from "./assets/planet-earth.svg"
 import MobileButtonList from './components/MobileButtonList'
 import PlanetInformations from './components/PlanetInformations'
-import NavbarCopy from './components/NavbarCopy'
+import planets from "./data.json"
+import earth from "./assets/planet-earth.svg"
+
 
 
 function App() {
 
   return (
     <>
-     <Navbar/>
+     <Navbar planets={planets}/>
      <MobileButtonList />
      <Main earth={earth}/>
      <PlanetInformations />

@@ -1,18 +1,16 @@
 import "../styles/PlanetDescription.css";
 import sourceIcon from "../assets/icon-source.svg";
-function PlanetDescription() {
+function PlanetDescription({planet, category}) {
+    const {content, source} = planet[category]
     return (
         <div className="planet-description">
-            <h1 className="planet-description-title">earth</h1>
+            <h1 className="planet-description-title">{planet.name}</h1>
             <p className="planet-description-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia, qui magnam corporis alias neque eius doloribus
-                exercitationem officiis similique sint, in, blanditiis harum
-                esse maxime aspernatur eveniet quia velit! Cum.
+                {content}
             </p>
             <div className="infos-link">
                 Source:{" "}
-                <a href="#">
+                <a href={source} target="_blank">
                     Wikipedia <img src={sourceIcon} alt="source icon" />
                 </a>
             </div>

@@ -1,11 +1,10 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import burgerIcon from "../assets/icon-hamburger.svg";
-import BurgerIcon from "../components/svg/BurgerIcon"
+import BurgerIcon from "../components/svg/BurgerIcon";
 import chevronIcon from "../assets/icon-chevron.svg";
 import "../styles/Navbar.css";
 
-function Navbar({ planets }) {
+function Navbar({ planets, onPlanetChange }) {
     const [open, setOpen] = useState(false);
 
     const colors = [
@@ -44,7 +43,12 @@ function Navbar({ planets }) {
                     <nav className="overlay-nav">
                         <ul className="overlay-menu">
                             {planets.map((planet, index) => (
-                                <li key={index} className="overlay-list-planet">
+                                <li key={index} className="overlay-list-planet"
+                                onClick={() => {
+                                    onPlanetChange(planet.name)
+                                    setOpen(false);
+                                }}
+                                >
                                     <div
                                         style={{
                                             backgroundColor: `${colors[index]}`,

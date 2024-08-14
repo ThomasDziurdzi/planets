@@ -1,10 +1,12 @@
 import "../styles/MobileButtonList.css"
 
-function MobileButtonList () {
+function MobileButtonList ({onCategoryChange, activeCategory}) {
     return (
         <div className="planet-menu">
             <ul>
-                <li>overview</li>
+                <li
+                className=""
+                >overview</li>
                 <li>structure</li>
                 <li>surface</li>
             </ul>

@@ -4,8 +4,8 @@ import BurgerIcon from "../components/svg/BurgerIcon";
 import chevronIcon from "../assets/icon-chevron.svg";
 import "../styles/Navbar.css";
 
-function Navbar({ planets, onPlanetChange }) {
-    const [open, setOpen] = useState(false);
+function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
+  
 
     const colors = [
         "#def4fc",
@@ -24,9 +24,9 @@ function Navbar({ planets, onPlanetChange }) {
             <BurgerIcon
                 className="mobile header-burger-icon"
                 alt="burger menu"
-                onClick={() => setOpen(!open)}
+                onClick={() => setIsNavbarOpen(!isNavbarOpen)}
             />
-            {open && (
+            {isNavbarOpen && (
                 <div className="overlay-menu-container">
                     <div className="overlay-header-container">
                         <h1 className="overlay-title">The Planets</h1>
@@ -34,8 +34,7 @@ function Navbar({ planets, onPlanetChange }) {
                             className="mobile overlay-burger-icon"
                             fill="#838391"
                             onClick={() => {
-                                setOpen(!open);
-                                console.log(open);
+                                setIsNavbarOpen(!isNavbarOpen);
                             }}
                         />
                     </div>
@@ -46,7 +45,7 @@ function Navbar({ planets, onPlanetChange }) {
                                 <li key={index} className="overlay-list-planet"
                                 onClick={() => {
                                     onPlanetChange(planet.name)
-                                    setOpen(false);
+                                    setIsNavbarOpen(false);
                                 }}
                                 >
                                     <div

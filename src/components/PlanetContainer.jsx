@@ -1,20 +1,19 @@
 import { useSwipeable } from 'react-swipeable';
-import "../styles/PlanetContainer.css";
 import PropTypes from "prop-types";
 import PlanetDescription from "./PlanetDescription";
 import PlanetImage from "./PlanetImage";
+import "../styles/PlanetContainer.css";
 
 export default function PlanetContainer({ activePlanet, activeCategory, setActiveCategory }) {
+
+    const categories = ["overview", "structure", "geology"];
+    const currentIndex = categories.indexOf(activeCategory);
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => {
-            const categories = ["overview", "structure", "geology"];
-            const currentIndex = categories.indexOf(activeCategory);
             const nextIndex = (currentIndex + 1) % categories.length;
             setActiveCategory(categories[nextIndex]);
         },
         onSwipedRight: () => {
-            const categories = ["overview", "structure", "geology"];
-            const currentIndex = categories.indexOf(activeCategory);
             const prevIndex = (currentIndex - 1 + categories.length) % categories.length;
             setActiveCategory(categories[prevIndex]);
         },

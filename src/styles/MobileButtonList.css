@@ -1,6 +1,4 @@
 .planet-menu {
-
-    
     color: hsla(var(--light-grey-clr));
     font-family: var(--ff-main);
     text-transform: uppercase;
@@ -9,7 +7,6 @@
     font-size: 0.8rem;
     letter-spacing: 2.6px;
     border-bottom: 1px solid hsla(var(--light-grey-clr), 0.3);
-    
 
     ul {
         display: flex;

@@ -1,5 +1,5 @@
-import { useRef } from "react";
 import PropTypes from "prop-types";
+import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import BurgerIcon from "../components/svg/BurgerIcon";

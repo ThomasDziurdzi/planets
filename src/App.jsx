@@ -44,6 +44,7 @@ export default function App() {
                 <PlanetContainer
                     activePlanet={activePlanet}
                     activeCategory={activeCategory}
+                    setActiveCategory={setActiveCategory}
                 />
                 <PlanetInformations planet={activePlanet} />
             </div>

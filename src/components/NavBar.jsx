@@ -24,7 +24,7 @@ export default function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNav
         if (isNavbarOpen && menuRef.current) {
             return gsap.from(menuRef.current.children, {
                 autoAlpha: 0,
-                y: -50,
+                x: -50,
                 duration: 0.2,
                 stagger: 0.1,
             });

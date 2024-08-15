@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useRef } from "react";
 import PropTypes from "prop-types";
+import { useGSAP } from '@gsap/react';
+import { gsap } from "gsap";
 import BurgerIcon from "../components/svg/BurgerIcon";
 import chevronIcon from "../assets/icon-chevron.svg";
 import "../styles/Navbar.css";
 
-function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
-  
-
+export default function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
     const colors = [
         "#def4fc",
         "#f7cc7f",
@@ -18,6 +18,20 @@ function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
         "#497efa",
     ];
 
+    const menuRef = useRef(null);
+
+    useGSAP(() => {
+        if (isNavbarOpen && menuRef.current) {
+            return gsap.from(menuRef.current.children, {
+                autoAlpha: 0,
+                y: -50,
+                duration: 0.2,
+                stagger: 0.1,
+            });
+        }
+        return null;
+    }, [isNavbarOpen]);
+
     return (
         <header className="header">
             <h1 className="header-title">The Planets</h1>
@@ -27,7 +41,7 @@ function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
                 onClick={() => setIsNavbarOpen(!isNavbarOpen)}
             />
             {isNavbarOpen && (
-                <div className="overlay-menu-container">
+                <div  className="overlay-menu-container">
                     <div className="overlay-header-container">
                         <h1 className="overlay-title">The Planets</h1>
                         <BurgerIcon
@@ -40,13 +54,15 @@ function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
                     </div>
 
                     <nav className="overlay-nav">
-                        <ul className="overlay-menu">
+                        <ul  ref={menuRef} className="overlay-menu">
                             {planets.map((planet, index) => (
-                                <li key={index} className="overlay-list-planet"
-                                onClick={() => {
-                                    onPlanetChange(planet.name)
-                                    setIsNavbarOpen(false);
-                                }}
+                                <li
+                                    key={index}
+                                    className="overlay-list-planet"
+                                    onClick={() => {
+                                        onPlanetChange(planet.name);
+                                        setIsNavbarOpen(false);
+                                    }}
                                 >
                                     <div
                                         style={{
@@ -73,7 +89,8 @@ Navbar.propTypes = {
         PropTypes.shape({
             name: PropTypes.string.isRequired,
         })
-    ),
+    ).isRequired,
+    onPlanetChange: PropTypes.func.isRequired,
+    isNavbarOpen: PropTypes.bool.isRequired,
+    setIsNavbarOpen: PropTypes.func.isRequired,
 };
-
-export default Navbar;

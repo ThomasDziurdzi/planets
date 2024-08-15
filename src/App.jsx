@@ -6,7 +6,7 @@ import MobileButtonList from "./components/MobileButtonList";
 import PlanetInformations from "./components/PlanetInformations";
 import PlanetContainer from "./components/PlanetContainer";
 
-function App() {
+export default function App() {
     const [activePlanet, setActivePlanet] = useState(data[2]);
     const [activeCategory, setActiveCategory] = useState("overview");
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -51,4 +51,3 @@ function App() {
     );
 }
 
-export default App;

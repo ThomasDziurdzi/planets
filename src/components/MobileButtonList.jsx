@@ -1,6 +1,7 @@
 import "../styles/MobileButtonList.css";
+import PropTypes from "prop-types";
 
-function MobileButtonList({ onCategoryChange, activeCategory, planetIndex }) {
+export default function MobileButtonList({ onCategoryChange, activeCategory, planetIndex }) {
     const categories = [
         { label: "overview", dataKey: "overview" },
         { label: "structure", dataKey: "structure" },
@@ -41,4 +42,9 @@ function MobileButtonList({ onCategoryChange, activeCategory, planetIndex }) {
     );
 }
 
-export default MobileButtonList;
+MobileButtonList.propTypes = {
+    onCategoryChange: PropTypes.func.isRequired,  // Fonction requise pour changer de catégorie.
+    activeCategory: PropTypes.string.isRequired,  // La catégorie active, de type string et requise.
+    planetIndex: PropTypes.number.isRequired,  // Index de la planète, de type number et requis.
+};
+

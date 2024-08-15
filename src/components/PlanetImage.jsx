@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "../styles/PlanetImage.css";
 
-function PlanetImage({ planet, category }) {
+export default function PlanetImage({ planet, category }) {
     const imageMap = {
         overview: [planet.images.planet],
         structure: [planet.images.internal],
@@ -39,5 +39,3 @@ PlanetImage.propTypes = {
     }).isRequired,
     category: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
 };
-
-export default PlanetImage;

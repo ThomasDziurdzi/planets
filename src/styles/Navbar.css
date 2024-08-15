@@ -17,14 +17,8 @@
     }
 
     .header-burger-icon {
-        /* height: 1.5rem; */
         margin-right: 2rem;
-        cursor: pointer;
-        
-        
     }
-
-    
 
     .overlay-menu-container {
         position: fixed;
@@ -35,8 +29,9 @@
         background-color: hsl(var(--main-clr));
         font-family: var(--ff-main);
         font-weight: bold;
-       
         text-transform: uppercase;
+        
+        
 
         .overlay-header-container {
             margin: 2rem 0;
@@ -54,11 +49,7 @@
             }
             .overlay-burger-icon {
                 margin-right: 2rem;
-                cursor: pointer;
-                
-               
             }
-            
         }
 
         .overlay-nav {

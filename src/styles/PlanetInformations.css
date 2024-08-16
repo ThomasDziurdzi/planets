@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 2rem 2rem;
+    margin: 0 2rem 1rem;
     
     gap: 1rem;
 
@@ -58,4 +58,13 @@
     }
     }
   }
+}
+
+@media (min-width: 1280px) {
+  .informations-container {
+    width: 80%;
+    margin: 4rem auto;
+    gap: 1.5rem;
+  }
+
 }

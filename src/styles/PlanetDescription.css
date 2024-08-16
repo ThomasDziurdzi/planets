@@ -41,6 +41,31 @@
 
     .planet-description-text {
       text-align: left;
+      height: 150px;
     }
   }
+}
+
+@media (min-width: 1280px) {
+
+  .planet-description {
+    margin: 0;
+    padding-bottom: 1rem;
+
+    .planet-description-title {
+      margin-top: 6rem;
+      font-size: 3.7rem;
+    }
+
+    .planet-description-text {
+      text-align: left;
+      height: 130px;
+    }
+
+    .infos-link {
+      margin-top: 1rem;
+    }
+  }
+
+  
 }

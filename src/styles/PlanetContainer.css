@@ -16,3 +16,29 @@
     }
 }
 
+@media (min-width: 1280px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    width: 80%;
+    margin: 0 auto;
+
+    & > :first-child {
+      flex: 2;
+  }
+
+    & > :last-child {
+      flex: 1;
+    }
+
+    .planet-description-container {
+      flex-direction: column;
+      margin: 0 ;
+      
+      
+      
+  }
+
+}
+}

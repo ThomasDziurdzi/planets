@@ -27,14 +27,15 @@ export default function ButtonList({
         <div className="planet-menu">
             <ul>
                 {categories.map(({ label, dataKey }, index) => (
-                    <li key={label} onClick={() => onCategoryChange(dataKey)}
-                    style={{
-                      backgroundColor: activeCategory === dataKey ? `${categoryColors[planetIndex]}` : "",
-                      borderBottom:
-                          activeCategory === dataKey
-                              ? `4px solid ${categoryColors[planetIndex]}`
-                              : "",
-                  }}
+                    <li
+                        key={label}
+                        onClick={() => onCategoryChange(dataKey)}
+                        style={{
+                            backgroundColor:
+                                activeCategory === dataKey
+                                    ? `${categoryColors[planetIndex]}`
+                                    : "",
+                        }}
                     >
                         <span>0{index + 1} </span>
                         {label}

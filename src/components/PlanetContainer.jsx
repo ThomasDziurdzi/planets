@@ -28,20 +28,20 @@ export default function PlanetContainer({
 
     return (
         <div {...swipeHandlers} className="container">
-            <PlanetImage planet={activePlanet} category={activeCategory} />
-            <div className="planet-description-container">
-            <PlanetDescription
-                planet={activePlanet}
-                category={activeCategory}
-            />
-            <ButtonList
-                onCategoryChange={onCategoryChange}
-                activeCategory={activeCategory}
-                planetIndex={planetIndex}
-            />
-              
-            </div>
+            
+                <PlanetImage planet={activePlanet} category={activeCategory} />
            
+            <div className="planet-description-container">
+                <PlanetDescription
+                    planet={activePlanet}
+                    category={activeCategory}
+                />
+                <ButtonList
+                    onCategoryChange={onCategoryChange}
+                    activeCategory={activeCategory}
+                    planetIndex={planetIndex}
+                />
+            </div>
         </div>
     );
 }

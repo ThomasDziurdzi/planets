@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "../styles/MobileButtonList.css";
+import "../styles/ButtonList.css";
 
 export default function ButtonList({
     onCategoryChange,
@@ -8,8 +8,8 @@ export default function ButtonList({
 }) {
     const categories = [
         { label: "overview", dataKey: "overview" },
-        { label: "structure", dataKey: "structure" },
-        { label: "surface", dataKey: "geology" },
+        { label: "internal structure", dataKey: "structure" },
+        { label: "surface geology", dataKey: "geology" },
     ];
 
     const categoryColors = [
@@ -26,12 +26,17 @@ export default function ButtonList({
     return (
         <div className="planet-menu">
             <ul>
-                {categories.map(({ label, dataKey }) => (
-                    <li
-                        key={label}
-                        onClick={() => onCategoryChange(dataKey)}
-                       
+                {categories.map(({ label, dataKey }, index) => (
+                    <li key={label} onClick={() => onCategoryChange(dataKey)}
+                    style={{
+                      backgroundColor: activeCategory === dataKey ? `${categoryColors[planetIndex]}` : "",
+                      borderBottom:
+                          activeCategory === dataKey
+                              ? `4px solid ${categoryColors[planetIndex]}`
+                              : "",
+                  }}
                     >
+                        <span>0{index + 1} </span>
                         {label}
                     </li>
                 ))}

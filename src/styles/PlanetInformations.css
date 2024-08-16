@@ -4,6 +4,7 @@
     gap: 0.75rem;
     color: hsl(var(--white-clr));
     margin-bottom: 1rem;
+    
 
     .informations-card {
         display: flex;
@@ -35,6 +36,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 2rem 2rem;
+    
     gap: 1rem;
 
     .informations-card {

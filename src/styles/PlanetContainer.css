@@ -4,20 +4,19 @@
     align-items: center;
 
     @media (min-width: 700px) {
-      .planet-description-container {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    
-        & > :first-child {
-          flex: 3;
+        .planet-description-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            
+
+            & > :first-child {
+                flex: 3;
+            }
+
+            & > :last-child {
+                flex: 2;
+            }
         }
-    
-        & > :last-child  {
-          flex: 2;
-        }
-      }
     }
-
 }
-

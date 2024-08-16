@@ -11,7 +11,7 @@ export default function Navbar({
     onPlanetChange,
     isNavbarOpen,
     setIsNavbarOpen,
-    activePlanet
+    activePlanet,
 }) {
     const colors = [
         "#def4fc",
@@ -46,7 +46,7 @@ export default function Navbar({
                 alt="burger menu"
                 onClick={() => setIsNavbarOpen(!isNavbarOpen)}
             />
-           <nav className=" not-mobile header-nav">
+            <nav className=" not-mobile header-nav">
                 <ul className="not-mobile header-menu">
                     {planets.map((planet, index) => (
                         <li
@@ -56,19 +56,19 @@ export default function Navbar({
                                 onPlanetChange(planet.name);
                             }}
                             style={{
-                                color: planet.name === activePlanet.name ? "#fff" : "", // Appliquer la couleur blanche si c'est la planète active
+                                color:
+                                    planet.name === activePlanet.name
+                                        ? `${colors[index]}`
+                                        : "",
                             }}
-                           
                         >
-                            <div className="not-mobile header-list-planet-name"
-                            >
+                            <div className="not-mobile header-list-planet-name">
                                 {planet.name}
                             </div>
                         </li>
                     ))}
                 </ul>
-           
-                </nav>
+            </nav>
             {isNavbarOpen && (
                 <div className="overlay-menu-container">
                     <div className="overlay-header-container">
@@ -124,5 +124,5 @@ Navbar.propTypes = {
     setIsNavbarOpen: PropTypes.func.isRequired,
     activePlanet: PropTypes.shape({
         name: PropTypes.string.isRequired,
-    }).isRequired, 
+    }).isRequired,
 };

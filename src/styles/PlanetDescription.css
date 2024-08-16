@@ -36,6 +36,7 @@
 @media (min-width:700px) {
   .planet-description {
     align-items: baseline;
+    margin: 0 0 2rem 2rem;
 
     .planet-description-text {
       text-align: left;

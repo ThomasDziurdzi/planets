@@ -21,8 +21,18 @@
     }
 
     .header-nav {
-        .header-list-planet {
-            color: white;
+        width: 90%;
+
+        .header-menu {
+            margin: 4rem 0 2rem;
+            .header-list-planet {
+                color: white;
+                letter-spacing: 2.6px;
+                font-weight: bold;
+                font-family: var(--ff-main);
+                text-transform: uppercase;
+                color: hsla(var(--light-grey-clr));
+            }
         }
     }
 
@@ -36,8 +46,6 @@
         font-family: var(--ff-main);
         font-weight: bold;
         text-transform: uppercase;
-        
-        
 
         .overlay-header-container {
             margin: 2rem 0;
@@ -100,20 +108,32 @@
     }
 }
 
-@media (min-width:600px) {
+@media (min-width: 700px) {
     .mobile {
-      display: none;
+        display: none;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .not-mobile {
-      display: none;
+        display: none;
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
     .not-mobile {
-      display: none;
+        display: none;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        padding-bottom: 0;
+
+        .header-menu {
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }

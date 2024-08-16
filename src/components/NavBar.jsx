@@ -1,12 +1,18 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
-import { useGSAP } from '@gsap/react';
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import BurgerIcon from "../components/svg/BurgerIcon";
 import chevronIcon from "../assets/icon-chevron.svg";
 import "../styles/Navbar.css";
 
-export default function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen }) {
+export default function Navbar({
+    planets,
+    onPlanetChange,
+    isNavbarOpen,
+    setIsNavbarOpen,
+    activePlanet
+}) {
     const colors = [
         "#def4fc",
         "#f7cc7f",
@@ -40,13 +46,31 @@ export default function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNav
                 alt="burger menu"
                 onClick={() => setIsNavbarOpen(!isNavbarOpen)}
             />
-            <ul className="not-mobile header-nav">
-                <li className=" not-mobile header-list-planet">
-                    dqsdqsdqsd
-                </li>
-            </ul>
+           <nav className=" not-mobile header-nav">
+                <ul className="not-mobile header-menu">
+                    {planets.map((planet, index) => (
+                        <li
+                            key={index}
+                            className="not-mobile header-list-planet"
+                            onClick={() => {
+                                onPlanetChange(planet.name);
+                            }}
+                            style={{
+                                color: planet.name === activePlanet.name ? "#fff" : "", // Appliquer la couleur blanche si c'est la planète active
+                            }}
+                           
+                        >
+                            <div className="not-mobile header-list-planet-name"
+                            >
+                                {planet.name}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+           
+                </nav>
             {isNavbarOpen && (
-                <div  className="overlay-menu-container">
+                <div className="overlay-menu-container">
                     <div className="overlay-header-container">
                         <h1 className="overlay-title">The Planets</h1>
                         <BurgerIcon
@@ -59,7 +83,7 @@ export default function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNav
                     </div>
 
                     <nav className="overlay-nav">
-                        <ul  ref={menuRef} className="overlay-menu">
+                        <ul ref={menuRef} className="overlay-menu">
                             {planets.map((planet, index) => (
                                 <li
                                     key={index}
@@ -98,4 +122,7 @@ Navbar.propTypes = {
     onPlanetChange: PropTypes.func.isRequired,
     isNavbarOpen: PropTypes.bool.isRequired,
     setIsNavbarOpen: PropTypes.func.isRequired,
+    activePlanet: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+    }).isRequired, 
 };

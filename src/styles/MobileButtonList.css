@@ -1,5 +1,5 @@
 .planet-menu {
-    color: hsla(var(--light-grey-clr));
+    color: hsl(var(--light-grey-clr));
     font-family: var(--ff-main);
     text-transform: uppercase;
     font-weight: bold;

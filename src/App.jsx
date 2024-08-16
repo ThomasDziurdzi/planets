@@ -34,6 +34,7 @@ export default function App() {
                 onPlanetChange={handlePlanetChange}
                 isNavbarOpen={isNavbarOpen}
                 setIsNavbarOpen={setIsNavbarOpen}
+                activePlanet={activePlanet}
             />
             <div className={isNavbarOpen ? "hidden-content" : ""}>
                 <MobileButtonList

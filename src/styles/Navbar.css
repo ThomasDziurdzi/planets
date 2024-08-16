@@ -22,9 +22,11 @@
 
     .header-nav {
         width: 90%;
+        
 
         .header-menu {
             margin: 4rem 0 2rem;
+
             .header-list-planet {
                 color: white;
                 letter-spacing: 2.6px;
@@ -32,6 +34,7 @@
                 font-family: var(--ff-main);
                 text-transform: uppercase;
                 color: hsla(var(--light-grey-clr));
+                cursor: pointer;
             }
         }
     }

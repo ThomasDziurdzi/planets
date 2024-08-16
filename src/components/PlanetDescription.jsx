@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "../styles/PlanetDescription.css";
 import sourceIcon from "../assets/icon-source.svg";
 
@@ -23,16 +23,16 @@ PlanetDescription.propTypes = {
         name: PropTypes.string.isRequired,
         overview: PropTypes.shape({
             content: PropTypes.string.isRequired,
-            source: PropTypes.string.isRequired
+            source: PropTypes.string.isRequired,
         }).isRequired,
         structure: PropTypes.shape({
             content: PropTypes.string.isRequired,
-            source: PropTypes.string.isRequired
+            source: PropTypes.string.isRequired,
         }).isRequired,
         geology: PropTypes.shape({
             content: PropTypes.string.isRequired,
-            source: PropTypes.string.isRequired
+            source: PropTypes.string.isRequired,
         }).isRequired,
     }).isRequired,
-    category: PropTypes.oneOf(['overview', 'structure', 'geology']).isRequired
+    category: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
 };

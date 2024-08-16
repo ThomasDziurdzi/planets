@@ -46,6 +46,8 @@ export default function App() {
                     activePlanet={activePlanet}
                     activeCategory={activeCategory}
                     setActiveCategory={setActiveCategory}
+                    onCategoryChange={handleCategoryChange}
+                    planetIndex={activePlanetIndex}
                 />
                 <PlanetInformations planet={activePlanet} />
             </div>

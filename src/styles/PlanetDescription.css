@@ -26,9 +26,19 @@
         color: hsl(var(--light-grey-clr));
 
         a {
-            text-decoration: none;
+            text-decoration: underline;
             color: hsl(var(--light-grey-clr));
             font-weight: bold;
         }
     }
+}
+
+@media (min-width:700px) {
+  .planet-description {
+    align-items: baseline;
+
+    .planet-description-text {
+      text-align: left;
+    }
+  }
 }

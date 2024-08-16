@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
 import "../styles/MobileButtonList.css";
 
-export default function MobileButtonList({ onCategoryChange, activeCategory, planetIndex }) {
+export default function ButtonList({
+    onCategoryChange,
+    activeCategory,
+    planetIndex,
+}) {
     const categories = [
         { label: "overview", dataKey: "overview" },
         { label: "structure", dataKey: "structure" },
         { label: "surface", dataKey: "geology" },
     ];
 
-    const borderColors = [
+    const categoryColors = [
         "#419EBB",
         "#EDA249",
         "#6f2ed6",
@@ -20,19 +24,13 @@ export default function MobileButtonList({ onCategoryChange, activeCategory, pla
     ];
 
     return (
-        <div className="-mobile-planet-menu">
+        <div className="planet-menu">
             <ul>
                 {categories.map(({ label, dataKey }) => (
                     <li
                         key={label}
                         onClick={() => onCategoryChange(dataKey)}
-                        style={{
-                            color: activeCategory === dataKey ? "white" : "",
-                            borderBottom:
-                                activeCategory === dataKey
-                                    ? `4px solid ${borderColors[planetIndex]}`
-                                    : "",
-                        }}
+                       
                     >
                         {label}
                     </li>
@@ -42,9 +40,8 @@ export default function MobileButtonList({ onCategoryChange, activeCategory, pla
     );
 }
 
-MobileButtonList.propTypes = {
-    onCategoryChange: PropTypes.func.isRequired, 
-    activeCategory: PropTypes.string.isRequired, 
+ButtonList.propTypes = {
+    onCategoryChange: PropTypes.func.isRequired,
+    activeCategory: PropTypes.string.isRequired,
     planetIndex: PropTypes.number.isRequired,
 };
-

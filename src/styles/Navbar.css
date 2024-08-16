@@ -20,6 +20,12 @@
         margin-right: 2rem;
     }
 
+    .header-nav {
+        .header-list-planet {
+            color: white;
+        }
+    }
+
     .overlay-menu-container {
         position: fixed;
         top: 0;
@@ -94,8 +100,20 @@
     }
 }
 
-/* @media (min-width:600px) {
+@media (min-width:600px) {
     .mobile {
       display: none;
     }
-} */
+}
+
+@media (max-width: 600px) {
+    .not-mobile {
+      display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .not-mobile {
+      display: none;
+    }
+}

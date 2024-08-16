@@ -40,6 +40,11 @@ export default function Navbar({ planets, onPlanetChange, isNavbarOpen, setIsNav
                 alt="burger menu"
                 onClick={() => setIsNavbarOpen(!isNavbarOpen)}
             />
+            <ul className="not-mobile header-nav">
+                <li className=" not-mobile header-list-planet">
+                    dqsdqsdqsd
+                </li>
+            </ul>
             {isNavbarOpen && (
                 <div  className="overlay-menu-container">
                     <div className="overlay-header-container">

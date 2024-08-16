@@ -36,7 +36,7 @@ export default function App() {
                 setIsNavbarOpen={setIsNavbarOpen}
                 activePlanet={activePlanet}
             />
-            <div className={isNavbarOpen ? "hidden-content" : ""}>
+            <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
                 <MobileButtonList
                     onCategoryChange={handleCategoryChange}
                     activeCategory={activeCategory}

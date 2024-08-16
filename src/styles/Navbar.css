@@ -22,7 +22,6 @@
 
     .header-nav {
         width: 95%;
-        
 
         .header-menu {
             margin: 3rem 0 2rem;
@@ -123,12 +122,6 @@
     }
 }
 
-@media (min-width: 1024px) {
-    .not-mobile {
-        display: none;
-    }
-}
-
 @media (min-width: 700px) and (max-width: 1024px) {
     .header {
         flex-direction: column;
@@ -137,6 +130,45 @@
         .header-menu {
             display: flex;
             justify-content: space-around;
+        }
+
+        .header-list-planet {
+            box-shadow: none;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        margin-top: 0;
+        padding-bottom: 0;
+
+        .header-title {
+            width: 100%;
+        }
+
+        .header-nav {
+            margin-right: 2rem;
+
+            .header-menu {
+                display: flex;
+                justify-content: flex-end;
+                gap: 2rem;
+                margin: 0;
+
+                .header-list-planet {
+                    margin: 0;
+                    padding: 2rem 0;
+                    box-sizing: border-box;
+
+                    &:hover {
+                        color: hsl(var(--white-clr));
+                    }
+                }
+                .active {
+                    box-shadow: inset 0 4px 0;
+                }
+            }
         }
     }
 }

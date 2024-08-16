@@ -51,7 +51,11 @@ export default function Navbar({
                     {planets.map((planet, index) => (
                         <li
                             key={index}
-                            className="not-mobile header-list-planet"
+                            className={`not-mobile header-list-planet ${
+                                planet.name === activePlanet.name
+                                    ? "active"
+                                    : ""
+                            }`}
                             onClick={() => {
                                 onPlanetChange(planet.name);
                             }}
@@ -98,7 +102,7 @@ export default function Navbar({
                                             backgroundColor: `${colors[index]}`,
                                         }}
                                         className="overlay-color-list"
-                                    ></div>
+                                    />
                                     <div className="overlay-list-planet-name">
                                         {planet.name}
                                         <img src={chevronIcon} alt="chevron" />

@@ -50,4 +50,6 @@ PlanetContainer.propTypes = {
     activePlanet: PropTypes.object.isRequired,
     activeCategory: PropTypes.string.isRequired,
     setActiveCategory: PropTypes.func.isRequired,
+    onCategoryChange: PropTypes.func.isRequired, 
+    planetIndex: PropTypes.number.isRequired,
 };

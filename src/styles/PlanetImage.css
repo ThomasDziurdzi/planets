@@ -36,27 +36,25 @@
             bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
-            width: 150px;
+            max-width: 150px;
         }
     }
 }
 
 @media (min-width: 1280px) {
     .planet-image {
-       
-
         .planet-image-svg {
-            max-width: 40%;
+            max-width: 24vw;
             height: auto;
             object-fit: contain;
         }
 
-        geology-image {
-          position: absolute;
-          bottom: 10%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 150px;
-      }
+        .geology-image {
+            position: absolute;
+            bottom: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 10vw;
+        }
     }
 }

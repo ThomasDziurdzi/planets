@@ -1,7 +1,5 @@
-.planet-menu {
-
-    
-    color: hsla(var(--light-grey-clr));
+.-mobile-planet-menu {
+    color: hsl(var(--light-grey-clr));
     font-family: var(--ff-main);
     text-transform: uppercase;
     font-weight: bold;
@@ -9,11 +7,22 @@
     font-size: 0.8rem;
     letter-spacing: 2.6px;
     border-bottom: 1px solid hsla(var(--light-grey-clr), 0.3);
-    
 
     ul {
         display: flex;
         justify-content: space-between;
-        margin: 1rem 2rem;
+        padding: 0 2rem;
+        list-style: none;
+
+        li {
+            padding: 1rem 0;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .-mobile-planet-menu {
+        display: none;
     }
 }

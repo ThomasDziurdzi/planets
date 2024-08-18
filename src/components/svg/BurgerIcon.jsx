@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function BurgerIcon({
+export default function BurgerIcon({
     width = "24",
     height = "17",
     fill = "#fff",
@@ -33,4 +33,4 @@ BurgerIcon.propTypes = {
     alt: PropTypes.string,
 };
 
-export default BurgerIcon;
+

@@ -1,13 +1,13 @@
+import PropTypes from "prop-types";
 import "../styles/PlanetDescription.css";
 import sourceIcon from "../assets/icon-source.svg";
-function PlanetDescription({planet, category}) {
-    const {content, source} = planet[category]
+
+export default function PlanetDescription({ planet, category }) {
+    const { content, source } = planet[category];
     return (
         <div className="planet-description">
             <h1 className="planet-description-title">{planet.name}</h1>
-            <p className="planet-description-text">
-                {content}
-            </p>
+            <p className="planet-description-text">{content}</p>
             <div className="infos-link">
                 Source:{" "}
                 <a href={source} target="_blank">
@@ -17,4 +17,22 @@ function PlanetDescription({planet, category}) {
         </div>
     );
 }
-export default PlanetDescription;
+
+PlanetDescription.propTypes = {
+    planet: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        overview: PropTypes.shape({
+            content: PropTypes.string.isRequired,
+            source: PropTypes.string.isRequired,
+        }).isRequired,
+        structure: PropTypes.shape({
+            content: PropTypes.string.isRequired,
+            source: PropTypes.string.isRequired,
+        }).isRequired,
+        geology: PropTypes.shape({
+            content: PropTypes.string.isRequired,
+            source: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
+    category: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
+};

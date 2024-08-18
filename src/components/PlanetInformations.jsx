@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import "../styles/PlanetInformations.css"
 
-function PlanetInformations ({planet}) {
+export default function PlanetInformations ({planet}) {
 
     const { rotation, revolution, radius, temperature } = planet;
 
@@ -36,4 +36,3 @@ PlanetInformations.propTypes = {
     }).isRequired,
 }
 
-export default PlanetInformations

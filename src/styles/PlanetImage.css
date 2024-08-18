@@ -2,19 +2,59 @@
     display: flex;
     justify-content: center;
     max-width: 100%;
-    margin:  5rem 3rem;
+    margin: 5rem 3rem;
     position: relative;
-    
-     .planet-image-svg {
-         width: 80%;
-         
-     }
- 
-     .geology-image {
-         position: absolute;
-         bottom: -15%;
-         left: 50%;
-         transform: translateX(-50%);
-         width: 40%;
-     }
- }
+
+    .planet-image-svg {
+        width: 80%;
+    }
+
+    .geology-image {
+        position: absolute;
+        bottom: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1280px) {
+    .planet-image {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        height: 600px;
+        margin: 0;
+
+        .planet-image-svg {
+            width: 80%;
+            object-fit: contain;
+        }
+
+        .geology-image {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 150px;
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .planet-image {
+        .planet-image-svg {
+            max-width: 24vw;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .geology-image {
+            position: absolute;
+            bottom: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 10vw;
+        }
+    }
+}

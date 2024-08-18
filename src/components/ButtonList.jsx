@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
-import "../styles/MobileButtonList.css";
+import "../styles/ButtonList.css";
 
-export default function MobileButtonList({ onCategoryChange, activeCategory, planetIndex }) {
+export default function ButtonList({
+    onCategoryChange,
+    activeCategory,
+    planetIndex,
+}) {
     const categories = [
         { label: "overview", dataKey: "overview" },
-        { label: "structure", dataKey: "structure" },
-        { label: "surface", dataKey: "geology" },
+        { label: "internal structure", dataKey: "structure" },
+        { label: "surface geology", dataKey: "geology" },
     ];
 
-    const borderColors = [
+    const categoryColors = [
         "#419EBB",
         "#EDA249",
         "#6f2ed6",
@@ -20,20 +24,20 @@ export default function MobileButtonList({ onCategoryChange, activeCategory, pla
     ];
 
     return (
-        <div className="-mobile-planet-menu">
+        <div className="planet-menu">
             <ul>
-                {categories.map(({ label, dataKey }) => (
+                {categories.map(({ label, dataKey }, index) => (
                     <li
                         key={label}
                         onClick={() => onCategoryChange(dataKey)}
                         style={{
-                            color: activeCategory === dataKey ? "white" : "",
-                            borderBottom:
+                            backgroundColor:
                                 activeCategory === dataKey
-                                    ? `4px solid ${borderColors[planetIndex]}`
+                                    ? `${categoryColors[planetIndex]}`
                                     : "",
                         }}
                     >
+                        <span>0{index + 1} </span>
                         {label}
                     </li>
                 ))}
@@ -42,9 +46,8 @@ export default function MobileButtonList({ onCategoryChange, activeCategory, pla
     );
 }
 
-MobileButtonList.propTypes = {
-    onCategoryChange: PropTypes.func.isRequired, 
-    activeCategory: PropTypes.string.isRequired, 
+ButtonList.propTypes = {
+    onCategoryChange: PropTypes.func.isRequired,
+    activeCategory: PropTypes.string.isRequired,
     planetIndex: PropTypes.number.isRequired,
 };
-

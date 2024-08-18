@@ -6,7 +6,7 @@ import MobileButtonList from "./components/MobileButtonList";
 import PlanetInformations from "./components/PlanetInformations";
 import PlanetContainer from "./components/PlanetContainer";
 
-function App() {
+export default function App() {
     const [activePlanet, setActivePlanet] = useState(data[2]);
     const [activeCategory, setActiveCategory] = useState("overview");
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -34,8 +34,9 @@ function App() {
                 onPlanetChange={handlePlanetChange}
                 isNavbarOpen={isNavbarOpen}
                 setIsNavbarOpen={setIsNavbarOpen}
+                activePlanet={activePlanet}
             />
-            <div className={isNavbarOpen ? "hidden-content" : ""}>
+            <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
                 <MobileButtonList
                     onCategoryChange={handleCategoryChange}
                     activeCategory={activeCategory}
@@ -44,6 +45,9 @@ function App() {
                 <PlanetContainer
                     activePlanet={activePlanet}
                     activeCategory={activeCategory}
+                    setActiveCategory={setActiveCategory}
+                    onCategoryChange={handleCategoryChange}
+                    planetIndex={activePlanetIndex}
                 />
                 <PlanetInformations planet={activePlanet} />
             </div>
@@ -51,4 +55,3 @@ function App() {
     );
 }
 
-export default App;

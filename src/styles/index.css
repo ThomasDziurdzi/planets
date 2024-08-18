@@ -25,7 +25,5 @@ body {
 	background: hsl(var(--main-clr)) url("/background-stars.svg");
 
 
-	.hidden-content {
-		display: none;
-	}
+	
 }

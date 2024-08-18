@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
 import "../styles/PlanetDescription.css";
 import sourceIcon from "../assets/icon-source.svg";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-export default function PlanetDescription({ planet, category }) {
-    const { content, source } = planet[category];
+export default function PlanetDescription() {
+  const {activePlanet, activeCategory} = useContext(AppContext)
+    const { content, source } = activePlanet[activeCategory];
     return (
         <div className="planet-description">
-            <h1 className="planet-description-title">{planet.name}</h1>
+            <h1 className="planet-description-title">{activePlanet.name}</h1>
             <p className="planet-description-text">{content}</p>
             <div className="infos-link">
                 Source:{" "}
@@ -19,7 +22,7 @@ export default function PlanetDescription({ planet, category }) {
 }
 
 PlanetDescription.propTypes = {
-    planet: PropTypes.shape({
+  activePlanet: PropTypes.shape({
         name: PropTypes.string.isRequired,
         overview: PropTypes.shape({
             content: PropTypes.string.isRequired,
@@ -34,5 +37,5 @@ PlanetDescription.propTypes = {
             source: PropTypes.string.isRequired,
         }).isRequired,
     }).isRequired,
-    category: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
+    activeCategory: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
 };

@@ -32,10 +32,7 @@ export default function PlanetContainer({
                 <PlanetImage/>
            
             <div className="planet-description-container">
-                <PlanetDescription
-                    planet={activePlanet}
-                    category={activeCategory}
-                />
+                <PlanetDescription/>
                 <ButtonList
                     onCategoryChange={onCategoryChange}
                     activeCategory={activeCategory}

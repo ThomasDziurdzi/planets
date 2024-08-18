@@ -44,8 +44,8 @@ export default function App() {
             <Navbar />
             <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
                 <MobileButtonList />
-                <PlanetContainer/>
-                <PlanetInformations planet={activePlanet} />
+                <PlanetContainer />
+                <PlanetInformations />
             </div>
         </AppContext.Provider>
     );

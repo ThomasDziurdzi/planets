@@ -44,11 +44,7 @@ export default function App() {
             <Navbar />
             <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
                 <MobileButtonList />
-                <PlanetContainer
-                    setActiveCategory={setActiveCategory}
-                    onCategoryChange={handleCategoryChange}
-                    planetIndex={activePlanetIndex}
-                />
+                <PlanetContainer/>
                 <PlanetInformations planet={activePlanet} />
             </div>
         </AppContext.Provider>

@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import "../styles/ButtonList.css";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-export default function ButtonList({
-    onCategoryChange,
-    activeCategory,
-    planetIndex,
-}) {
+export default function ButtonList() {
+  const {onCategoryChange, activeCategory, planetIndex} = useContext(AppContext)
+  
     const categories = [
         { label: "overview", dataKey: "overview" },
         { label: "internal structure", dataKey: "structure" },

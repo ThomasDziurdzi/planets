@@ -1,17 +1,15 @@
 import { useSwipeable } from "react-swipeable";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 import PropTypes from "prop-types";
 import PlanetDescription from "./PlanetDescription";
 import PlanetImage from "./PlanetImage";
-import "../styles/PlanetContainer.css";
 import ButtonList from "./ButtonList";
+import "../styles/PlanetContainer.css";
 
-export default function PlanetContainer({
-    activePlanet,
-    activeCategory,
-    setActiveCategory,
-    onCategoryChange,
-    planetIndex,
-}) {
+export default function PlanetContainer() {
+  const {activeCategory, setActiveCategory} = useContext(AppContext)
+
     const categories = ["overview", "structure", "geology"];
     const currentIndex = categories.indexOf(activeCategory);
     const swipeHandlers = useSwipeable({
@@ -28,23 +26,16 @@ export default function PlanetContainer({
 
     return (
         <div {...swipeHandlers} className="container">
-            
-                <PlanetImage/>
-           
+            <PlanetImage />
             <div className="planet-description-container">
-                <PlanetDescription/>
-                <ButtonList
-                    onCategoryChange={onCategoryChange}
-                    activeCategory={activeCategory}
-                    planetIndex={planetIndex}
-                />
+                <PlanetDescription />
+                <ButtonList />
             </div>
         </div>
     );
 }
 
 PlanetContainer.propTypes = {
-    activePlanet: PropTypes.object.isRequired,
     activeCategory: PropTypes.string.isRequired,
     setActiveCategory: PropTypes.func.isRequired,
 };

@@ -5,6 +5,7 @@ import Navbar from "./components/NavBar";
 import MobileButtonList from "./components/MobileButtonList";
 import PlanetInformations from "./components/PlanetInformations";
 import PlanetContainer from "./components/PlanetContainer";
+import AppContext from "./context/AppContext";
 
 export default function App() {
     const [activePlanet, setActivePlanet] = useState(data[2]);
@@ -28,14 +29,16 @@ export default function App() {
     );
 
     return (
-        <>
-            <Navbar
-                planets={data}
-                onPlanetChange={handlePlanetChange}
-                isNavbarOpen={isNavbarOpen}
-                setIsNavbarOpen={setIsNavbarOpen}
-                activePlanet={activePlanet}
-            />
+        <AppContext.Provider
+            value={{
+                planets: data,
+                onPlanetChange: handlePlanetChange,
+                isNavbarOpen: isNavbarOpen,
+                setIsNavbarOpen: setIsNavbarOpen,
+                activePlanet: activePlanet,
+            }}
+        >
+            <Navbar/>
             <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
                 <MobileButtonList
                     onCategoryChange={handleCategoryChange}
@@ -51,7 +54,6 @@ export default function App() {
                 />
                 <PlanetInformations planet={activePlanet} />
             </div>
-        </>
+        </AppContext.Provider>
     );
 }
-

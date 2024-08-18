@@ -1,11 +1,10 @@
-import PropTypes from "prop-types";
 import "../styles/ButtonList.css";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
 
 export default function ButtonList() {
   const {onCategoryChange, activeCategory, planetIndex} = useContext(AppContext)
-  
+
     const categories = [
         { label: "overview", dataKey: "overview" },
         { label: "internal structure", dataKey: "structure" },
@@ -46,8 +45,3 @@ export default function ButtonList() {
     );
 }
 
-ButtonList.propTypes = {
-    onCategoryChange: PropTypes.func.isRequired,
-    activeCategory: PropTypes.string.isRequired,
-    planetIndex: PropTypes.number.isRequired,
-};

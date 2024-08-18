@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "../styles/MobileButtonList.css";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
@@ -46,9 +45,4 @@ export default function MobileButtonList() {
     );
 }
 
-MobileButtonList.propTypes = {
-    onCategoryChange: PropTypes.func.isRequired, 
-    activeCategory: PropTypes.string.isRequired, 
-    planetIndex: PropTypes.number.isRequired,
-};
 

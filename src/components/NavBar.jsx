@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useContext, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -114,16 +113,3 @@ export default function Navbar() {
     );
 }
 
-Navbar.propTypes = {
-    planets: PropTypes.arrayOf(
-        PropTypes.shape({
-            name: PropTypes.string.isRequired,
-        })
-    ).isRequired,
-    onPlanetChange: PropTypes.func.isRequired,
-    isNavbarOpen: PropTypes.bool.isRequired,
-    setIsNavbarOpen: PropTypes.func.isRequired,
-    activePlanet: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-    }).isRequired,
-};

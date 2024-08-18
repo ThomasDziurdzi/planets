@@ -1,7 +1,6 @@
 import { useSwipeable } from "react-swipeable";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
-import PropTypes from "prop-types";
 import PlanetDescription from "./PlanetDescription";
 import PlanetImage from "./PlanetImage";
 import ButtonList from "./ButtonList";
@@ -34,8 +33,3 @@ export default function PlanetContainer() {
         </div>
     );
 }
-
-PlanetContainer.propTypes = {
-    activeCategory: PropTypes.string.isRequired,
-    setActiveCategory: PropTypes.func.isRequired,
-};

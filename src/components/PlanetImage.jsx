@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "../styles/PlanetImage.css";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
@@ -32,14 +31,3 @@ export default function PlanetImage() {
     );
 }
 
-PlanetImage.propTypes = {
-  activePlanet: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        images: PropTypes.shape({
-            planet: PropTypes.string.isRequired,
-            internal: PropTypes.string.isRequired,
-            geology: PropTypes.string.isRequired,
-        }).isRequired,
-    }).isRequired,
-    activeCategory: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
-};

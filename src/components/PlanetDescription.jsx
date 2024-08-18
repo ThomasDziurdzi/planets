@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "../styles/PlanetDescription.css";
 import sourceIcon from "../assets/icon-source.svg";
 import { useContext } from "react";
@@ -21,21 +20,3 @@ export default function PlanetDescription() {
     );
 }
 
-PlanetDescription.propTypes = {
-  activePlanet: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        overview: PropTypes.shape({
-            content: PropTypes.string.isRequired,
-            source: PropTypes.string.isRequired,
-        }).isRequired,
-        structure: PropTypes.shape({
-            content: PropTypes.string.isRequired,
-            source: PropTypes.string.isRequired,
-        }).isRequired,
-        geology: PropTypes.shape({
-            content: PropTypes.string.isRequired,
-            source: PropTypes.string.isRequired,
-        }).isRequired,
-    }).isRequired,
-    activeCategory: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
-};

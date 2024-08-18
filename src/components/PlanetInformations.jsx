@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import "../styles/PlanetInformations.css"
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
@@ -30,12 +30,5 @@ export default function PlanetInformations () {
     )
 }
 
-PlanetInformations.propTypes = {
-  activePlanet: PropTypes.shape({
-        rotation: PropTypes.string.isRequired,
-        revolution: PropTypes.string.isRequired,
-        radius: PropTypes.string.isRequired,
-        temperature: PropTypes.string.isRequired,
-    }).isRequired,
-}
+
 

@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import "../styles/MobileButtonList.css";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-export default function MobileButtonList({ onCategoryChange, activeCategory, planetIndex }) {
+export default function MobileButtonList() {
+  const {onCategoryChange, activeCategory, planetIndex} = useContext(AppContext)
+  
     const categories = [
         { label: "overview", dataKey: "overview" },
         { label: "structure", dataKey: "structure" },

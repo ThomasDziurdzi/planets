@@ -36,15 +36,15 @@ export default function App() {
                 isNavbarOpen: isNavbarOpen,
                 setIsNavbarOpen: setIsNavbarOpen,
                 activePlanet: activePlanet,
+                onCategoryChange: handleCategoryChange,
+                activeCategory: activeCategory,
+                planetIndex :activePlanetIndex
+
             }}
         >
             <Navbar/>
             <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
-                <MobileButtonList
-                    onCategoryChange={handleCategoryChange}
-                    activeCategory={activeCategory}
-                    planetIndex={activePlanetIndex}
-                />
+                <MobileButtonList/>
                 <PlanetContainer
                     activePlanet={activePlanet}
                     activeCategory={activeCategory}

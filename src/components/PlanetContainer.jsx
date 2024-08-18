@@ -29,7 +29,7 @@ export default function PlanetContainer({
     return (
         <div {...swipeHandlers} className="container">
             
-                <PlanetImage planet={activePlanet} category={activeCategory} />
+                <PlanetImage/>
            
             <div className="planet-description-container">
                 <PlanetDescription
@@ -50,6 +50,4 @@ PlanetContainer.propTypes = {
     activePlanet: PropTypes.object.isRequired,
     activeCategory: PropTypes.string.isRequired,
     setActiveCategory: PropTypes.func.isRequired,
-    onCategoryChange: PropTypes.func.isRequired, 
-    planetIndex: PropTypes.number.isRequired,
 };

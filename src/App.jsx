@@ -31,20 +31,19 @@ export default function App() {
     return (
         <AppContext.Provider
             value={{
-                planets: data,
                 onPlanetChange: handlePlanetChange,
-                isNavbarOpen: isNavbarOpen,
                 setIsNavbarOpen: setIsNavbarOpen,
-                activePlanet: activePlanet,
                 onCategoryChange: handleCategoryChange,
+                planets: data,
+                isNavbarOpen: isNavbarOpen,
+                activePlanet: activePlanet,
                 activeCategory: activeCategory,
-                planetIndex :activePlanetIndex
-
+                planetIndex: activePlanetIndex,
             }}
         >
-            <Navbar/>
+            <Navbar />
             <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
-                <MobileButtonList/>
+                <MobileButtonList />
                 <PlanetContainer
                     activePlanet={activePlanet}
                     activeCategory={activeCategory}

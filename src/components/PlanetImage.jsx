@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
 import "../styles/PlanetImage.css";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-export default function PlanetImage({ planet, category }) {
+export default function PlanetImage() {
+
+  const {activePlanet, activeCategory} = useContext(AppContext)
     const imageMap = {
-        overview: [planet.images.planet],
-        structure: [planet.images.internal],
-        geology: [planet.images.planet, planet.images.geology],
+        overview: [activePlanet.images.planet],
+        structure: [activePlanet.images.internal],
+        geology: [activePlanet.images.planet, activePlanet.images.geology],
     };
 
-    const imagesToDisplay = imageMap[category] || planet.images.planet;
+    const imagesToDisplay = imageMap[activeCategory] || activePlanet.images.planet;
 
     return (
         <div className="planet-image">
@@ -16,9 +20,9 @@ export default function PlanetImage({ planet, category }) {
                 <img
                     key={index}
                     src={src}
-                    alt={`${planet.name} ${category}`}
+                    alt={`${activePlanet.name} ${activeCategory}`}
                     className={`planet-image-svg ${
-                        category === "geology" && index === 1
+                      activeCategory === "geology" && index === 1
                             ? "geology-image"
                             : ""
                     }`}
@@ -29,7 +33,7 @@ export default function PlanetImage({ planet, category }) {
 }
 
 PlanetImage.propTypes = {
-    planet: PropTypes.shape({
+  activePlanet: PropTypes.shape({
         name: PropTypes.string.isRequired,
         images: PropTypes.shape({
             planet: PropTypes.string.isRequired,
@@ -37,5 +41,5 @@ PlanetImage.propTypes = {
             geology: PropTypes.string.isRequired,
         }).isRequired,
     }).isRequired,
-    category: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
+    activeCategory: PropTypes.oneOf(["overview", "structure", "geology"]).isRequired,
 };

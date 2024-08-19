@@ -5,7 +5,9 @@ import AppContext from "../context/AppContext";
 
 export default function PlanetDescription() {
   const {activePlanet, activeCategory} = useContext(AppContext)
+
     const { content, source } = activePlanet[activeCategory];
+    
     return (
         <div className="planet-description">
             <h1 className="planet-description-title">{activePlanet.name}</h1>

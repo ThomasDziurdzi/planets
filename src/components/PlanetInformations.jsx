@@ -1,10 +1,9 @@
+import "../styles/PlanetInformations.css";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-import "../styles/PlanetInformations.css"
-import { useContext } from 'react';
-import AppContext from '../context/AppContext';
-
-export default function PlanetInformations () {
-  const {activePlanet} = useContext(AppContext);
+export default function PlanetInformations() {
+    const { activePlanet } = useContext(AppContext);
 
     const { rotation, revolution, radius, temperature } = activePlanet;
 
@@ -27,8 +26,5 @@ export default function PlanetInformations () {
                 <span>{temperature}</span>
             </div>
         </div>
-    )
+    );
 }
-
-
-

@@ -7,19 +7,19 @@ import ButtonList from "./ButtonList";
 import "../styles/PlanetContainer.css";
 
 export default function PlanetContainer() {
-  const {activeCategory, setActiveCategory} = useContext(AppContext)
+  const {activeCategory, onCategoryChange} = useContext(AppContext)
 
     const categories = ["overview", "structure", "geology"];
     const currentIndex = categories.indexOf(activeCategory);
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => {
             const nextIndex = (currentIndex + 1) % categories.length;
-            setActiveCategory(categories[nextIndex]);
+            onCategoryChange(categories[nextIndex]);
         },
         onSwipedRight: () => {
             const prevIndex =
                 (currentIndex - 1 + categories.length) % categories.length;
-            setActiveCategory(categories[prevIndex]);
+                onCategoryChange(categories[prevIndex]);
         },
     });
 

@@ -5,6 +5,7 @@ import Navbar from "./components/NavBar";
 import MobileButtonList from "./components/MobileButtonList";
 import PlanetInformations from "./components/PlanetInformations";
 import PlanetContainer from "./components/PlanetContainer";
+import AppContext from "./context/AppContext";
 
 export default function App() {
     const [activePlanet, setActivePlanet] = useState(data[2]);
@@ -28,30 +29,24 @@ export default function App() {
     );
 
     return (
-        <>
-            <Navbar
-                planets={data}
-                onPlanetChange={handlePlanetChange}
-                isNavbarOpen={isNavbarOpen}
-                setIsNavbarOpen={setIsNavbarOpen}
-                activePlanet={activePlanet}
-            />
+        <AppContext.Provider
+            value={{
+                onPlanetChange: handlePlanetChange,
+                setIsNavbarOpen: setIsNavbarOpen,
+                onCategoryChange: handleCategoryChange,
+                planets: data,
+                isNavbarOpen: isNavbarOpen,
+                activePlanet: activePlanet,
+                activeCategory: activeCategory,
+                planetIndex: activePlanetIndex,
+            }}
+        >
+            <Navbar />
             <div className={isNavbarOpen ? "hidden-content" : "app-container"}>
-                <MobileButtonList
-                    onCategoryChange={handleCategoryChange}
-                    activeCategory={activeCategory}
-                    planetIndex={activePlanetIndex}
-                />
-                <PlanetContainer
-                    activePlanet={activePlanet}
-                    activeCategory={activeCategory}
-                    setActiveCategory={setActiveCategory}
-                    onCategoryChange={handleCategoryChange}
-                    planetIndex={activePlanetIndex}
-                />
-                <PlanetInformations planet={activePlanet} />
+                <MobileButtonList />
+                <PlanetContainer />
+                <PlanetInformations />
             </div>
-        </>
+        </AppContext.Provider>
     );
 }
-

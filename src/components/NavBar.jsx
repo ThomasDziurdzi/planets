@@ -1,18 +1,14 @@
-import PropTypes from "prop-types";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import BurgerIcon from "../components/svg/BurgerIcon";
 import chevronIcon from "../assets/icon-chevron.svg";
 import "../styles/Navbar.css";
+import AppContext from "../context/AppContext";
 
-export default function Navbar({
-    planets,
-    onPlanetChange,
-    isNavbarOpen,
-    setIsNavbarOpen,
-    activePlanet,
-}) {
+export default function Navbar() {
+
+  const {planets, onPlanetChange, isNavbarOpen, setIsNavbarOpen, activePlanet} = useContext(AppContext)
     const colors = [
         "#def4fc",
         "#f7cc7f",
@@ -117,16 +113,3 @@ export default function Navbar({
     );
 }
 
-Navbar.propTypes = {
-    planets: PropTypes.arrayOf(
-        PropTypes.shape({
-            name: PropTypes.string.isRequired,
-        })
-    ).isRequired,
-    onPlanetChange: PropTypes.func.isRequired,
-    isNavbarOpen: PropTypes.bool.isRequired,
-    setIsNavbarOpen: PropTypes.func.isRequired,
-    activePlanet: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-    }).isRequired,
-};

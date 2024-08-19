@@ -1,29 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap");
 
 :root {
-	/* Colors */
-	--main-clr: 240 67% 8%;
-	--white-clr: 0, 0%, 100%;
-	--medium-grey-clr: 240, 17%, 26%;
-	--light-grey-clr: 240, 6%, 54%;
-	--light-blue-clr: #419EBB;
-	--dark-yellow-clr: #EDA249;
-	--purple-clr: #6F2ED6;
-	--dark-orange-clr: #D14C32;
-	--red-clr:10 63% 51%;
-	--orange-clr: #CD5120;
-	--light-blue-clr: #1EC2A4;
-	--medium-blue-clr: #2D68F0;
-	
-	/*Font Styling*/
-	--ff-main: "League Spartan", sans-serif;
-	--ff-second: "Antonio", sans-serif;
+    /* Colors */
+    --main-clr: 240 67% 8%;
+    --white-clr: 0, 0%, 100%;
+    --medium-grey-clr: 240, 17%, 26%;
+    --light-grey-clr: 240, 6%, 54%;
+    --light-blue-clr: 194,48%,49%;
+    --dark-yellow-clr: 33,82%,61%;
+    --purple-clr: 263,67%,51%;
+    --dark-orange-clr: 10,63%,51%;
+    --red-clr: 2,68%,53%;
+    --orange-clr: 17,73%,46%;
+    --light-blue-clr: 169,73%,44%;
+    --medium-blue-clr: 222,87%,56%;
 
+    /* Font Styling */
+    --ff-main: "League Spartan", sans-serif;
+    --ff-second: "Antonio", sans-serif;
 }
 
 body {
-	background: hsl(var(--main-clr)) url("/background-stars.svg");
-
-
-	
+    background: hsl(var(--main-clr)) url("/background-stars.svg");
 }

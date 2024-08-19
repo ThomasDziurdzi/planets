@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types';
-import "../styles/PlanetInformations.css"
+import "../styles/PlanetInformations.css";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-export default function PlanetInformations ({planet}) {
+export default function PlanetInformations() {
+    const { activePlanet } = useContext(AppContext);
 
-    const { rotation, revolution, radius, temperature } = planet;
+    const { rotation, revolution, radius, temperature } = activePlanet;
 
     return (
         <div className="informations-container">
@@ -24,15 +26,5 @@ export default function PlanetInformations ({planet}) {
                 <span>{temperature}</span>
             </div>
         </div>
-    )
+    );
 }
-
-PlanetInformations.propTypes = {
-    planet: PropTypes.shape({
-        rotation: PropTypes.string.isRequired,
-        revolution: PropTypes.string.isRequired,
-        radius: PropTypes.string.isRequired,
-        temperature: PropTypes.string.isRequired,
-    }).isRequired,
-}
-
